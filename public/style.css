@@ -1,5 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Tangerine:400,700&display=swap);
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css?family=Tangerine:400,700&display=swap');
 body {
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ header {
     background-color: rgb(161, 221, 236);
     padding: 20px 0;
     text-align: center;
-    background-image: url(../imgs/foto-background.jpg);    
+    background-image: url(137a339ce5f71157d40b3638587ce55a.jpg);    
     background-size: 100% 100%;
     height: 70vh;
     background-attachment: fixed

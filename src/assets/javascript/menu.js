@@ -17,10 +17,12 @@ function openOrClose() {
     if (opened === false) {
         openMenu();
         opened = true;
+        $body.style.overflow = "hidden"
     }
     else {
         closeMenu();
         opened = false;
+        $body.style.overflow = "auto"
     }
 }
 
@@ -33,11 +35,13 @@ function closeMenu() {
 }
 
 window.addEventListener("resize", e => {
-    debugger
     if (window.innerWidth < min_width) {
         $ul_menu.style.visibility = "hidden";
+        $body.style.overflow = "auto"
+        opened = false;
     }
     else {
         $ul_menu.style.visibility = "visible";
+        opened = true;
     }
 })
