@@ -1,0 +1,239 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Tangerine:400,700&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+header {
+    background-color: rgb(161, 221, 236);
+    padding: 20px 0;
+    text-align: center;
+    background-image: url(../imgs/foto-background.jpg);    
+    background-size: 100% 100%;
+    height: 70vh;
+    background-attachment: fixed
+}
+
+.btn-menu {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.navgation h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.navgation .logo {
+    font-family: "tangerine";
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.navgation ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navgation ul li {
+    list-style: none;
+    padding: 0;
+    background-color: rgb(12, 113, 138);
+    border-bottom: 1px solid rgb(101, 185, 206);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul li a {
+    padding: 10px;
+    display: block;
+    transition: color .5s ease-in-out;
+    -webkit-transition: color .5s ease-in-out;
+    -moz-transition: color .5s ease-in-out;
+    -ms-transition: color .5s ease-in-out;
+    -o-transition: color .5s ease-in-out;
+}
+
+ul a:hover {
+    color: rgb(101, 185, 206);
+}
+
+.corpo {
+    padding: 40px;
+}
+
+.titulo {
+    text-align: center;
+    padding: 0;
+    margin-bottom: 20px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+span {
+    border-top: 3px solid white;
+    border-left: 3px solid yellow;
+    border-right: 3px solid aqua;
+    border-bottom: 3px solid peru;
+    height: 40px;
+    width: 40px;
+    display: block;
+    position: absolute;
+    bottom: 48%;
+    left: 48%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    animation: rotate .5s ease infinite alternate-reverse;
+    -webkit-animation: rotate .5s ease infinite alternate-reverse;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
+}
+
+.art-sec-text {
+    margin-bottom: 40px;
+    background-color: rgb(177, 235, 245);
+    padding: 20px;
+}
+
+.art-sec-text h3 {
+    text-align: center;
+    color: rgb(112, 78, 78);
+}
+
+.art-sec-img {
+    margin-bottom: 30px;
+}
+
+.art-sec-img:last-child {
+    margin-bottom: 0;
+}
+
+.art-sec-img img {
+    display: block;
+    width: 100%;
+    object-fit: fill;
+}
+
+footer {
+    text-align: center;
+    background-color: rgb(161, 221, 236);
+    padding: 5px;
+    line-height: 1;
+}
+
+footer a i {
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+footer a .fa-instagram {
+    color: purple;
+}
+
+footer a .fa-facebook-square {
+    color: rgb(63, 63, 194);
+}
+
+footer a .fa-youtube {
+    color: rgb(235, 57, 57);
+}
+
+@media screen and (min-width: 640px) {
+    .titulo {
+        margin-top: -20px;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    .navgation {
+        text-align: left;
+        display: flex;
+    }
+    .logo {
+        margin-left: 70px;
+        position: relative;
+        left: 60px
+    }
+    .navgation ul {
+        display: flex;
+        position: absolute;
+        right: 50px;
+    }
+    .navgation ul li {
+        background-color: transparent;
+        border: none;
+        transform: translateY(10px);
+        -webkit-transform: translateY(10px);
+        -moz-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        -o-transform: translateY(10px);
+    }
+    .sec-img {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .sec-text, .sec-img {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+    }
+}
+
+.js .logo {
+    text-align: left;
+    margin-left: 30px;
+}
+
+.js .btn-menu {
+    display: block;
+    position: absolute;
+    font-size: 25px;
+    top: 30px;
+    right: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+.js ul {
+    visibility: hidden;
+}
+
+@media screen and (min-width: 760px) {
+    .js ul {
+        visibility: visible;
+        display: flex;
+    }
+    .js .btn-menu {
+        visibility: hidden;
+    }
+}
