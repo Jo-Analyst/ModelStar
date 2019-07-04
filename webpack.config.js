@@ -7,7 +7,7 @@ const UglifyjsPlugin = require("uglifyjs-webpack-plugin");
 const webpackDevServer = require("webpack-dev-server");
 
 module.exports = {
-    mode: "development",
+    mode: "production",
     entry: "./src/indexJS.js",
     output: {
         filename: "index.js",
