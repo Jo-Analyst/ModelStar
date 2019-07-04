@@ -1,14 +1,12 @@
+const modoDev = process.env.NODE_ENV !== "production";
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizedCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HTMLWebPackPlugin = require("html-webpack-plugin");
-const webpackdevServer = require("webpack-dev-server");
-
-
 
 module.exports = {
-    mode: "production",
+    mode: modoDev ? "development" : "production",
     entry: "./src/indexJS.js",
     output: {
         filename: "index.js",
