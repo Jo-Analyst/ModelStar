@@ -1,10 +1,11 @@
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const htmlWebpackPlugin = require("html-webpack-plugin");
-//const htmlMinifierWebpackPlugin = require("html-minifier-webpack-plugin")
-const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
-const UglifyjsPlugin = require("uglifyjs-webpack-plugin");
-const webpackDevServer = require("webpack-dev-server");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const OptimizedCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const HTMLWebPackPlugin = require("html-webpack-plugin");
+const webpackdevServer = require("webpack-dev-server");
+
+
 
 module.exports = {
     mode: "production",
@@ -15,25 +16,25 @@ module.exports = {
     },
     devServer: {
         contentBase: "./public/",
-        port: 8000
-    },
+        port: 8081
+    }
+    ,
     optimization: {
         minimizer: [
-            new UglifyjsPlugin({
-                cache: true,
-                parallel: true
+            new UglifyJsPlugin({
+                cache:true,
+                parallel:true
             }),
-            new OptimizeCssAssetsWebpackPlugin({})
+            new OptimizedCssAssetsPlugin({})
         ]
     },
     plugins: [
         new MiniCssExtractPlugin({
             filename: "style.css"
         }),
-        new htmlWebpackPlugin({
+        new HTMLWebPackPlugin({
             filename: "index.html",
             template: "src/assets/index.html",
-            inject: "body",
             minify: {
                 html5: true,
                 collapseWhitespace: true,
@@ -50,22 +51,20 @@ module.exports = {
                 useShortDoctype: true
             }
         })
-        // new htmlMinifierWebpackPlugin({
-        //     filename: "index.html",
-        //     template: "src/assets/index.html",            
-        // })
     ],
     module: {
         rules: [{
             test: /\.css$/,
             use: [
                 MiniCssExtractPlugin.loader,
-                "css-loader"
-
+                'css-loader',
             ]
-        }, {
-            test: /\.(png|svg|jpg|jpeg|gif)$/,
-            use: ["file-loader"]
+        },
+        {
+            test: /\.(png|svg|jpg|gif|jpeg)$/,
+            use: [
+                'file-loader'
+            ]
         }, {
             test: /\.html$/,
             use: ["html-loader"]

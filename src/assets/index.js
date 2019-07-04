@@ -1,3 +1,3 @@
-import "./css/style.css"
-import "./index.html"
-import "./javascript/menu.js"
+import "./css/style.css";
+import "./index.html";
+import "./javascript/menu.js";
